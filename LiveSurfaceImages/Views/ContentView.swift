@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = (1...1000)
+        .map(Image.init)
+
     var body: some View {
-        Text("Hello, World!")
+        ScrollView {
+            GridView(columns: 3, list: items) { item in
+                GridThumbnail(imageData: item)
+            }
+        }
     }
 }
 

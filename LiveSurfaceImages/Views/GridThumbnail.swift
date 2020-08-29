@@ -6,20 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
-struct GridThumbnail: View, Hashable {
-    let imageData: Image
+class ImageViewModel {
+    @Published var image: UIImage?
+    var cancellationToken: AnyCancellable?
 
-    var body: some View {
-        Text("Item \(imageData.index)")
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
-            .background(Color.orange)
-            .padding()
+    let imageData: ImageModel
+
+    init(imageData: ImageModel) {
+        self.imageData = imageData
     }
 }
 
-struct GridThumbnail_Previews: PreviewProvider {
-    static var previews: some View {
-        GridThumbnail(imageData: Image(index: 1))
+
+struct GridThumbnail: View {
+    let imageData: ImageModel
+
+    var imageURL: URL {
+        URL(string: "https://www.livesurface.com/test/images/\(imageData.image)")!
+    }
+
+    var body: some View {
+        VStack {
+            Spacer()
+            AsyncImage(url: imageURL)
+            Spacer()
+            Text("\(imageData.name) \(imageData.number)")
+        }
     }
 }

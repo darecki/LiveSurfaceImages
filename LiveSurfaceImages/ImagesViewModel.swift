@@ -11,7 +11,7 @@ import Combine
 
 class ImagesViewModel: ObservableObject {
 
-    @Published var images: [Image] = []
+    @Published var images: [ImageModel] = []
     var cancellationToken: AnyCancellable?
 
     init() {
@@ -30,7 +30,9 @@ extension ImagesViewModel {
             })
             .sink(receiveCompletion: { _ in },
                 receiveValue: {
-                    self.images = Array($0.images.values)
+                    self.images = Array($0.images.values).sorted(by: { (lhs, rhs) -> Bool in
+                        lhs.index < rhs.index
+                    })
             })
     }
 

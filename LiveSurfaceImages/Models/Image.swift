@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Image: Decodable, Hashable {
+struct ImageModel: Decodable, Hashable {
     let index: Int
     let name: String
     let number: String
@@ -27,10 +27,4 @@ struct ImageTags: Decodable, Hashable {
     let sizedepth: String
     let sizedeptharc: String
     let sizeunits: String
-}
-
-extension Image {
-    init(index: Int) {
-        self = Image(index: index, name: "", number: "", image: "", category: "", version: "", tags: ImageTags(sizedescription: "", sizescale: "", sizewidth: "", sizewidtharc: "", sizeheight: "", sizeheightarc: "", sizedepth: "", sizedeptharc: "", sizeunits: ""))
-    }
 }

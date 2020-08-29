@@ -9,7 +9,7 @@
 import Foundation
 
 struct ImagesResponse: Decodable {
-    let images: [String: Image]
+    let images: [String: ImageModel]
 
     enum CodingKeys: String, CodingKey {
         case images = "images"

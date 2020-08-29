@@ -21,9 +21,10 @@ struct GridView<Content: View, T: Hashable>: View {
     var body: some View {
         VStack {
             ForEach(0 ..< self.list.count, id: \.self) { i in
-                HStack(alignment: .top, spacing: 20) {
+                HStack(alignment: .center, spacing: 20) {
                     ForEach(self.list[i], id: \.self) { object in
                         self.content(object)
+                            .frame(width: UIScreen.main.bounds.width / CGFloat(self.columns))
                     }
                 }
             }
@@ -48,14 +49,6 @@ struct GridView<Content: View, T: Hashable>: View {
                 self.list.insert([object], at: column)
                 columnIndex = 1
             }
-        }
-    }
-}
-
-struct GridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView(columns: 2, list: (1...10).map(Image.init)) { item in
-            GridThumbnail(imageData: item)
         }
     }
 }

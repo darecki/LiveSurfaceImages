@@ -12,6 +12,9 @@ struct GridThumbnail: View, Hashable {
 
     var body: some View {
         Text("Item \(imageData.index)")
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
+            .background(Color.orange)
+            .padding()
     }
 }
 

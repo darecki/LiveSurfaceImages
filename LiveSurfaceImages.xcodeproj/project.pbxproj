@@ -16,6 +16,10 @@
 		E581DABE24FA63D200381B19 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DABD24FA63D200381B19 /* Image.swift */; };
 		E581DAC024FA63EA00381B19 /* GridThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DABF24FA63EA00381B19 /* GridThumbnail.swift */; };
 		E581DAC224FA63F400381B19 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DAC124FA63F400381B19 /* GridView.swift */; };
+		E581DAC724FA6EBB00381B19 /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DAC624FA6EBB00381B19 /* ImagesViewModel.swift */; };
+		E581DAC924FA6FAE00381B19 /* ImagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DAC824FA6FAE00381B19 /* ImagesRequest.swift */; };
+		E581DACB24FA6FD000381B19 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DACA24FA6FD000381B19 /* APIClient.swift */; };
+		E581DACD24FA703E00381B19 /* ImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581DACC24FA703E00381B19 /* ImagesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		E581DABD24FA63D200381B19 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E581DABF24FA63EA00381B19 /* GridThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridThumbnail.swift; sourceTree = "<group>"; };
 		E581DAC124FA63F400381B19 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		E581DAC624FA6EBB00381B19 /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
+		E581DAC824FA6FAE00381B19 /* ImagesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRequest.swift; sourceTree = "<group>"; };
+		E581DACA24FA6FD000381B19 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E581DACC24FA703E00381B19 /* ImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,8 @@
 			children = (
 				E581DAB324FA62B500381B19 /* Info.plist */,
 				E581DAB924FA633B00381B19 /* LiveSurfaceImages.entitlements */,
+				E581DAC624FA6EBB00381B19 /* ImagesViewModel.swift */,
+				E581DAC524FA6E7600381B19 /* Networking */,
 				E581DABB24FA63C000381B19 /* App */,
 				E581DABA24FA63B400381B19 /* Views */,
 				E581DABC24FA63D200381B19 /* Models */,
@@ -106,8 +116,18 @@
 			isa = PBXGroup;
 			children = (
 				E581DABD24FA63D200381B19 /* Image.swift */,
+				E581DACC24FA703E00381B19 /* ImagesResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E581DAC524FA6E7600381B19 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E581DACA24FA6FD000381B19 /* APIClient.swift */,
+				E581DAC824FA6FAE00381B19 /* ImagesRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +202,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E581DAA624FA62B300381B19 /* AppDelegate.swift in Sources */,
+				E581DAC724FA6EBB00381B19 /* ImagesViewModel.swift in Sources */,
 				E581DABE24FA63D200381B19 /* Image.swift in Sources */,
 				E581DAA824FA62B300381B19 /* SceneDelegate.swift in Sources */,
 				E581DAAA24FA62B300381B19 /* ContentView.swift in Sources */,
 				E581DAC224FA63F400381B19 /* GridView.swift in Sources */,
+				E581DACD24FA703E00381B19 /* ImagesResponse.swift in Sources */,
+				E581DAC924FA6FAE00381B19 /* ImagesRequest.swift in Sources */,
 				E581DAC024FA63EA00381B19 /* GridThumbnail.swift in Sources */,
+				E581DACB24FA6FD000381B19 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

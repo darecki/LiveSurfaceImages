@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let items = (1...1000)
-        .map(Image.init)
+    @ObservedObject var viewModel = ImagesViewModel()
 
     var body: some View {
-        ScrollView {
-            GridView(columns: 3, list: items) { item in
-                GridThumbnail(imageData: item)
+        GeometryReader { geometry in
+            ScrollView {
+                GridView(columns: 2, list: self.viewModel.images) { item in
+                    GridThumbnail(imageData: item)
+                }
+                .frame(width: geometry.size.width)
             }
         }
     }

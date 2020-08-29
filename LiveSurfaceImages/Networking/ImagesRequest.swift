@@ -32,7 +32,7 @@ extension ImagesRequest {
             else { fatalError("Couldn't create URLComponents") }
         components.queryItems = [
             URLQueryItem(name: "key", value: "79319da5-8cb3-43ac-f5b0-f38a727242a8"),
-//            URLQueryItem(name: "pro", value: "1")
+            URLQueryItem(name: "pro", value: "1")
         ]
 
         let request = URLRequest(url: components.url!)

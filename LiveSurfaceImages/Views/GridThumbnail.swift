@@ -8,18 +8,6 @@
 import SwiftUI
 import Combine
 
-class ImageViewModel {
-    @Published var image: UIImage?
-    var cancellationToken: AnyCancellable?
-
-    let imageData: ImageModel
-
-    init(imageData: ImageModel) {
-        self.imageData = imageData
-    }
-}
-
-
 struct GridThumbnail: View {
     let imageData: ImageModel
 

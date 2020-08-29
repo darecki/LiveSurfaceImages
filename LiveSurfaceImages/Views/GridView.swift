@@ -19,9 +19,9 @@ struct GridView<Content: View, T: Hashable>: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ForEach(0 ..< self.list.count, id: \.self) { i in
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center, spacing: 0) {
                     ForEach(self.list[i], id: \.self) { object in
                         self.content(object)
                             .frame(width: UIScreen.main.bounds.width / CGFloat(self.columns))

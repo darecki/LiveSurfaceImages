@@ -10,15 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = ImagesViewModel()
+    @State private var columns: Double = 3
 
     var body: some View {
         GeometryReader { geometry in
-            ScrollView {
-                GridView(columns: 4, list: self.viewModel.images) { item in
-                    GridThumbnail(imageData: item)
+            VStack {
+                ScrollView {
+                    GridView(columns: Int(self.columns), list: self.viewModel.images) { item in
+                        GridThumbnail(imageData: item)
+                    }
+                    .frame(width: geometry.size.width)
                 }
-                .frame(width: geometry.size.width)
+                Slider(value: self.$columns, in: (1...8))
             }
+            .padding()
+
         }
     }
 }

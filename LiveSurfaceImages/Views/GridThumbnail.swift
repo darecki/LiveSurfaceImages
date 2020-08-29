@@ -33,6 +33,10 @@ struct GridThumbnail: View {
             AsyncImage(url: imageURL)
             Spacer()
             Text("\(imageData.name) \(imageData.number)")
+                .scaledToFit()
+                .minimumScaleFactor(0.01)
+                .lineLimit(1)
         }
+        .padding()
     }
 }
